@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Ubuntu:wght@300;400;500;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Ubuntu', system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+.editable-field {
+  cursor: text;
+}
+
+.editable-field:focus {
+  outline: none;
+  border-bottom: 1.5px dashed rgba(139, 115, 85, 0.45);
+  padding-bottom: 1px;
+}
+
+.editable-field:empty::before {
+  content: attr(data-placeholder);
+  opacity: 0.35;
+  font-style: italic;
+  pointer-events: none;
+}
+
+.nav-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: var(--font-body);
+  background: rgba(139, 115, 85, 0.12);
+  border: 1px solid rgba(139, 115, 85, 0.3);
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.nav-pill:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 12px rgba(139, 115, 85, 0.18);
+}
+
+.nav-pill:active {
+  transform: scale(0.96);
+}
